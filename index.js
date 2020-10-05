@@ -105,6 +105,16 @@ app.delete('/deleteEvent/:id',(req, res)=>{
 
 } )
 
+app.get('/showUser',(req, res)=>{
+  eventCollection.find({})
+  .toArray((err, result)=>{
+    console.log(err);
+    console.log(result);
+   
+    res.send(result);
+  })
+})
+
   app.get('/', (req, res) => {
     res.send('Hello World!')
   })
